@@ -200,26 +200,6 @@ nav a.active, .main-nav a.active {
   filter: brightness(0.8);
 }
 
-..hero-content {
-  position: relative;
-  text-align: left;
-  color: white;
-  max-width: 800px;
-  width: calc(100% - 100px);
-  padding: 48px;
-  z-index: 1;
-  margin-left: 60px;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 16px;
-  backdrop-filter: blur(12px);
-
-  border: 5px solid #ffd700;
-
-  box-shadow:
-    0 0 15px rgba(255,215,0,0.6),
-    0 12px 38px rgba(0,0,0,0.45);
-}
-
 @media (max-width: 1200px) {
   .hero-content {
     max-width: 700px;
