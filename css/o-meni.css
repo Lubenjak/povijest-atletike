@@ -1,0 +1,225 @@
+body {
+  background: linear-gradient(135deg, #eafaf1 0%, #ffffff 100%);
+}
+
+header {
+  background: linear-gradient(to right, #1a2980, #26d0ce);
+  color: white;
+  padding: 25px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.logo-icon {
+  font-size: 2rem;
+}
+
+
+.logo h1 {
+  font-size: 1.8rem;
+}
+
+.logo:hover {
+  color: #ffd700;
+}
+
+nav, .main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 24px;
+}
+
+nav a, .main-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+nav a:hover, .main-nav a:hover {
+  background: rgba(255, 255, 255, 0.28);
+  color: #1a2980;
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+nav a.active, .main-nav a.active {
+  background: white;
+  color: #1a2980;
+  border-color: #1a2980;
+}
+
+.page-hero {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../slike/ja1.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 120px 0;
+  margin-bottom: 50px;
+  border-radius: 0 0 15px 15px;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-title {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.page-subtitle {
+  color: #ffffff;
+  font-size: 1.4rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.section-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1a2980;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid rgba(26, 41, 128, 0.15);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  text-align: center;
+}
+
+.profile-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-card h3 {
+  font-size: 1.4rem;
+  margin: 14px 0 8px;
+  color: #1a2980;
+}
+
+.profile-card p {
+  padding: 0 18px 18px;
+  color: #3b3b3b;
+  line-height: 1.6;
+}
+
+.history-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1a2980;
+}
+
+.history-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.history-item {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  border: 1px solid rgba(26, 41, 128, 0.08);
+}
+
+.history-item h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #22386f;
+}
+
+.history-item p {
+  color: #3b3b3b;
+  line-height: 1.6;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a2980;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #19417e;
+  margin-top: 18px;
+}
+
+.back-button:hover {
+  background: #214191;
+}
+
+footer {
+  background: linear-gradient(to right, #1a2980, #26d0ce);
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 80px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.athletics-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.footer-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  opacity: 0.9;
+}
