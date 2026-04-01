@@ -11,6 +11,12 @@ body {
   line-height: 1.6;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -35,6 +41,33 @@ header {
   margin-bottom: 50px;
   border-radius: 0 0 15px 15px;
   height: 480px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .page-hero {
+    padding: 80px 0;
+    height: auto;
+    min-height: 360px;
+  }
+
+  .header-content {
+    padding: 15px 0;
+  }
+
+  .header-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-bottom .main-nav {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .hero .hero-title,
@@ -167,7 +200,7 @@ nav a.active, .main-nav a.active {
   filter: brightness(0.8);
 }
 
-.hero-content {
+..hero-content {
   position: relative;
   text-align: left;
   color: white;
@@ -186,6 +219,34 @@ nav a.active, .main-nav a.active {
     0 0 15px rgba(255,215,0,0.6),
     0 12px 38px rgba(0,0,0,0.45);
 }
+
+@media (max-width: 1200px) {
+  .hero-content {
+    max-width: 700px;
+    width: calc(100% - 80px);
+    margin-left: 40px;
+    padding: 36px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    max-width: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 28px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
 
 @keyframes fadeInUp {
   from {
