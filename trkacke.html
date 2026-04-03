@@ -37,8 +37,8 @@
 
     <section class="page-hero">
       <div class="container">
-        <h1 class="page-title">Trkačke discipline</h1>
-        <p class="page-subtitle">
+        <h1 class="page-title scroll-animate-left delay-1">Trkačke discipline</h1>
+        <p class="page-subtitle scroll-animate-left delay-2">
           Trkačke discipline u atletici uključuju natjecanja u trčanju na
           različitim udaljenostima, od sprinta do dugih pruga. Ove discipline
           zahtijevaju brzinu, izdržljivost, tehniku i taktičku inteligenciju.
@@ -47,15 +47,15 @@
     </section>
 
     <div class="container">
-      <a href="index.html" class="back-button">
+      <a href="index.html" class="back-button scroll-animate">
         <i class="fas fa-arrow-left"></i> Povratak na početnu
       </a>
 
       <div class="content-grid">
         <div class="main-content">
-          <h2 class="section-title">Trkačke discipline u atletici</h2>
+          <h2 class="section-title scroll-animate">Trkačke discipline u atletici</h2>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-1">
             <h3><i class="fas fa-bolt discipline-icon"></i> Sprint</h3>
             <p><strong>Udaljenosti:</strong> 100 m, 200 m, 400 m</p>
             <p>
@@ -67,7 +67,7 @@
             </p>
           </div>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-2">
             <h3>
               <i class="fas fa-tachometer-alt discipline-icon"></i> Srednje
               staze
@@ -82,7 +82,7 @@
             </p>
           </div>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-3">
             <h3><i class="fas fa-road discipline-icon"></i> Duge staze</h3>
             <p>
               <strong>Udaljenosti:</strong> 3000 m, 5000 m, 10 000 m,
@@ -98,7 +98,7 @@
             </p>
           </div>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-4">
             <h3>
               <i class="fas fa-border-all discipline-icon"></i> S preponama
             </h3>
@@ -115,9 +115,9 @@
         </div>
 
         <div class="facts-sidebar">
-          <h2 class="facts-title">Zanimljivosti</h2>
+          <h2 class="facts-title scroll-animate">Zanimljivosti</h2>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-1">
             <strong>Prva Olimpijska utrka</strong>
             <p>
               Prvi zabilježeni Olimpijski pobjednik u sprintu bio je Koroibos iz
@@ -125,7 +125,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-2">
             <strong>Žene u atletici</strong>
             <p>
               Prva ženska Olimpijska utrka na 100 m održana je tek 1928. godine
@@ -133,7 +133,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-3">
             <strong>Maraton</strong>
             <p>
               Maraton nije bio dio antičkih Olimpijskih igara. Dodan je modernim
@@ -141,7 +141,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-4">
             <strong>Usain Bolt</strong>
             <p>
               Usain Bolt drži svjetski rekord na 100 m od 2009. godine (9.58
@@ -149,7 +149,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-5">
             <strong>Najstariji rekord</strong>
             <p>
               Jedan od najstarijih svjetskih rekorda u atletici je rekord
@@ -160,32 +160,32 @@
       </div>
 
       <div class="records">
-        <h2 class="section-title">
+        <h2 class="section-title scroll-animate">
           Neki od svjetskih rekordova u trkačkim disciplinama
         </h2>
         <div class="records-grid">
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-1">
             <h4>100 m (muški)</h4>
             <p><strong>Vrijeme:</strong> 9.58 s</p>
             <p><strong>Vlasnik:</strong> Usain Bolt</p>
             <p><strong>Datum:</strong> 16. kolovoza 2009.</p>
           </div>
 
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-2">
             <h4>100 m (žene)</h4>
             <p><strong>Vrijeme:</strong> 10.49 s</p>
             <p><strong>Vlasnica:</strong> Florence Griffith-Joyner</p>
             <p><strong>Datum:</strong> 16. srpnja 1988.</p>
           </div>
 
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-3">
             <h4>Maraton (muški)</h4>
             <p><strong>Vrijeme:</strong> 2:01:09</p>
             <p><strong>Vlasnik:</strong> Eliud Kipchoge</p>
             <p><strong>Datum:</strong> 25. rujna 2022.</p>
           </div>
 
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-4">
             <h4>Maraton (žene)</h4>
             <p><strong>Vrijeme:</strong> 2:14:04</p>
             <p><strong>Vlasnica:</strong> Brigid Kosgei</p>
@@ -197,7 +197,7 @@
 
     <footer>
       <div class="container">
-        <div class="footer-content">
+        <div class="footer-content scroll-animate">
           <div class="athletics-icon">
             <i class="fas fa-medal"></i>
           </div>
@@ -210,5 +210,45 @@
         </div>
       </div>
     </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        // Observer za hero sekciju - jednosmerne animacije
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Ne uklanjaj klasu kada element izadje iz viewa
+                }
+            });
+        }, observerOptions);
+
+        // Observer za ostale elemente - dvosmerne animacije
+        const regularObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero elementi - jednosmerne animacije
+            const heroElements = document.querySelectorAll('.page-title, .page-subtitle');
+            heroElements.forEach(el => heroObserver.observe(el));
+            
+            // Ostali elementi - dvosmerne animacije
+            const regularElements = document.querySelectorAll('.back-button, .section-title, .discipline, .facts-title, .fact-item, .record-card, .footer-content');
+            regularElements.forEach(el => regularObserver.observe(el));
+        });
+    </script>
   </body>
 </html>

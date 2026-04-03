@@ -37,8 +37,8 @@
 
     <section class="page-hero">
       <div class="container">
-        <h1 class="page-title">Skakačke discipline</h1>
-        <p class="page-subtitle">
+        <h1 class="page-title scroll-animate-left delay-1">Skakačke discipline</h1>
+        <p class="page-subtitle scroll-animate-left delay-2">
           Skakačke discipline u atletici uključuju skokove u visinu i skokove u
           daljinu. Ove discipline zahtijevaju eksplozivnu snagu, tehniku, brzinu
           i koordinaciju.
@@ -47,15 +47,15 @@
     </section>
 
     <div class="container">
-      <a href="index.html" class="back-button">
+      <a href="index.html" class="back-button scroll-animate">
         <i class="fas fa-arrow-left"></i> Povratak na početnu
       </a>
 
       <div class="content-grid">
         <div class="main-content">
-          <h2 class="section-title">Skakačke discipline u atletici</h2>
+          <h2 class="section-title scroll-animate">Skakačke discipline u atletici</h2>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-1">
             <h3><i class="fas fa-arrow-up discipline-icon"></i> Skok u vis</h3>
             <p>
               Atletičari skaču preko vodoravne letvice postavljene na određenoj
@@ -70,7 +70,7 @@
             </p>
           </div>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-2">
             <h3>
               <i class="fas fa-arrow-right discipline-icon"></i> Skok u dalj
             </h3>
@@ -87,7 +87,7 @@
             </p>
           </div>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-3">
             <h3><i class="fas fa-arrows-alt-h discipline-icon"></i> Troskok</h3>
             <p>
               Troskok se sastoji od tri uzastopna skoka: "hop" (skok na istu
@@ -101,7 +101,7 @@
             </p>
           </div>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-4">
             <h3><i class="fas fa-poll discipline-icon"></i> Skok s motkom</h3>
             <p>
               Atletičari koriste fleksibilnu motku za odraz kako bi preskočili
@@ -117,9 +117,9 @@
         </div>
 
         <div class="facts-sidebar">
-          <h2 class="facts-title">Zanimljivosti</h2>
+          <h2 class="facts-title scroll-animate">Zanimljivosti</h2>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-1">
             <strong>Fosbury flop</strong>
             <p>
               Tehniku skoka u vis "Fosbury flop" popularizirao je Amerikanac
@@ -128,7 +128,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-2">
             <strong>Antičke Olimpijske igre</strong>
             <p>
               Skok u dalj bio je dio petobojskog natjecanja (pentatlona) na
@@ -137,7 +137,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-3">
             <strong>Najstariji rekord</strong>
             <p>
               Mike Powell drži svjetski rekord u skoku u dalj od 1991. godine
@@ -145,7 +145,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-4">
             <strong>Žene u skoku s motkom</strong>
             <p>
               Skok s motkom za žene uveden je na Olimpijskim igrama tek 2000.
@@ -153,7 +153,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-5">
             <strong>Troskok u Irskoj</strong>
             <p>
               U troskoku, prvi zapisani rezultat potječe iz 1829. godine s
@@ -164,32 +164,32 @@
       </div>
 
       <div class="records">
-        <h2 class="section-title">
+        <h2 class="section-title scroll-animate">
           Neki od svjetskih rekordova u skakačkim disciplinama
         </h2>
         <div class="records-grid">
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-1">
             <h4>Skok u vis (muški)</h4>
             <p><strong>Visina:</strong> 2.45 m</p>
             <p><strong>Vlasnik:</strong> Javier Sotomayor</p>
             <p><strong>Datum:</strong> 27. srpnja 1993.</p>
           </div>
 
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-2">
             <h4>Skok u vis (žene)</h4>
             <p><strong>Visina:</strong> 2.10 m</p>
             <p><strong>Vlasnica:</strong> Yaroslava Mahuchikh</p>
             <p><strong>Datum:</strong> 7. srpnja 2024.</p>
           </div>
 
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-3">
             <h4>Skok u dalj (muški)</h4>
             <p><strong>Daljina:</strong> 8.95 m</p>
             <p><strong>Vlasnik:</strong> Mike Powell</p>
             <p><strong>Datum:</strong> 30. kolovoza 1991.</p>
           </div>
 
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-4">
             <h4>Skok u dalj (žene)</h4>
             <p><strong>Daljina:</strong> 7.52 m</p>
             <p><strong>Vlasnica:</strong> Galina Chistyakova</p>
@@ -201,7 +201,7 @@
 
     <footer>
       <div class="container">
-        <div class="footer-content">
+        <div class="footer-content scroll-animate">
           <div class="athletics-icon">
             <i class="fas fa-medal"></i>
           </div>
@@ -214,5 +214,45 @@
         </div>
       </div>
     </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        // Observer za hero sekciju - jednosmerne animacije
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Ne uklanjaj klasu kada element izadje iz viewa
+                }
+            });
+        }, observerOptions);
+
+        // Observer za ostale elemente - dvosmerne animacije
+        const regularObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero elementi - jednosmerne animacije
+            const heroElements = document.querySelectorAll('.page-title, .page-subtitle');
+            heroElements.forEach(el => heroObserver.observe(el));
+            
+            // Ostali elementi - dvosmerne animacije
+            const regularElements = document.querySelectorAll('.back-button, .section-title, .discipline, .facts-title, .fact-item, .record-card, .footer-content');
+            regularElements.forEach(el => regularObserver.observe(el));
+        });
+    </script>
   </body>
 </html>

@@ -37,8 +37,8 @@
 
     <section class="page-hero">
       <div class="container">
-        <h1 class="page-title">O meni</h1>
-        <p class="page-subtitle">
+        <h1 class="page-title scroll-animate-left delay-1">O meni</h1>
+        <p class="page-subtitle scroll-animate-left delay-2">
           Dobrodošli na stranicu autora! Ovdje možete vidjeti puno zanimljivosti i osobnih stvari o meni!
         </p>
       </div>
@@ -46,14 +46,14 @@
 
     <div class="container">
         <section class="profile-section">
-            <h2 class="section-title">Profil i galerija</h2>
+            <h2 class="section-title scroll-animate">Profil i galerija</h2>
             <div class="profile-grid">
-                <div class="profile-card">
+                <div class="profile-card scroll-animate-scale delay-1">
                     <img src="slike/ja2.jpeg" alt="Profil slika 1" />
                     <h3>Dominik Lubenjak</h3>
                     <p>Moje ime je Dominik Lubenjak i bavim se atletikom u Atletskom klubu Agram već nekoliko godina i završavam Tehničku školu Ruđera Boškovića u Zagrebu.</p>
                 </div>
-                <div class="profile-card">
+                <div class="profile-card scroll-animate-scale delay-2">
                     <img src="slike/ja3.jpeg" alt="Profil slika 2" />
                     <h3>Strast za sport</h3>
                     <p>Od malih nogu sport je bio moja ljubav. Krenuo sam trenirati nogomet kada sam imao 7 godina u NK Rudeš-u, a onda sam prešao na atletiku krajem osmog razreda osnovne škole.</p>
@@ -62,17 +62,17 @@
         </section>
 
         <section class="history">
-            <h2 class="section-title">O projektu</h2>
+            <h2 class="section-title scroll-animate">O projektu</h2>
             <div class="history-content">
-                <div class="history-item">
+                <div class="history-item scroll-animate-left delay-1">
                     <h3><i class="fas fa-user"></i> Autor</h3>
                     <p>U ovih nekoliko godina koliko se bavim atletikom, postao sam višestruki prvak u disciplinama poput skoka u vis, troskoka, 110m s preponama i višeboj(10 disciplina u 2 dana).</p>
                 </div>
-                <div class="history-item">
+                <div class="history-item scroll-animate-left delay-2">
                     <h3><i class="fas fa-lightbulb"></i> Motivacija</h3>
                     <p>Odlučio sam napraviti ovu stranicu kako bi drugi ljudi otkrili ljepotu ovog sporta i možda se okušali u njemu.</p>
                 </div>
-                <div class="history-item">
+                <div class="history-item scroll-animate-left delay-3">
                     <h3><i class="fas fa-globe"></i> Kontakt</h3>
                     <p>Email: <a href="mailto:dlubenjak00@gmail.com">dlubenjak00@gmail.com</a></p>
                     <p>Mobitel: <a href="tel:+385923183605">092 318 3605</a></p>
@@ -80,12 +80,12 @@
             </div>
         </section>
 
-        <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Povratak na početnu</a>
+        <a href="index.html" class="back-button scroll-animate"><i class="fas fa-arrow-left"></i> Povratak na početnu</a>
     </div>
 
     <footer>
       <div class="container">
-        <div class="footer-content">
+        <div class="footer-content scroll-animate">
           <div class="athletics-icon">
             <i class="fas fa-medal"></i>
           </div>
@@ -96,5 +96,45 @@
         </div>
       </div>
     </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        // Observer za hero sekciju - jednosmerne animacije
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Ne uklanjaj klasu kada element izadje iz viewa
+                }
+            });
+        }, observerOptions);
+
+        // Observer za ostale elemente - dvosmerne animacije
+        const regularObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero elementi - jednosmerne animacije
+            const heroElements = document.querySelectorAll('.page-title, .page-subtitle');
+            heroElements.forEach(el => heroObserver.observe(el));
+            
+            // Ostali elementi - dvosmerne animacije
+            const regularElements = document.querySelectorAll('.section-title, .profile-card, .history-item, .back-button, .footer-content');
+            regularElements.forEach(el => regularObserver.observe(el));
+        });
+    </script>
 </body>
 </html>

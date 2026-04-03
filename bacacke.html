@@ -37,8 +37,8 @@
 
     <section class="page-hero">
       <div class="container">
-        <h1 class="page-title">Bacačke discipline</h1>
-        <p class="page-subtitle">
+        <h1 class="page-title scroll-animate-left delay-1">Bacačke discipline</h1>
+        <p class="page-subtitle scroll-animate-left delay-2">
           Bacačke discipline u atletici uključuju bacanje kugle, diska, koplja i
           kladiva. Ove discipline zahtijevaju snagu, tehniku, koordinaciju i
           eksplozivnu moć.
@@ -47,15 +47,15 @@
     </section>
 
     <div class="container">
-      <a href="index.html" class="back-button">
+      <a href="index.html" class="back-button scroll-animate">
         <i class="fas fa-arrow-left"></i> Povratak na početnu
       </a>
 
       <div class="content-grid">
         <div class="main-content">
-          <h2 class="section-title">Bacačke discipline u atletici</h2>
+          <h2 class="section-title scroll-animate">Bacačke discipline u atletici</h2>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-1">
             <h3><i class="fas fa-circle discipline-icon"></i> Bacanje kugle</h3>
             <p><strong>Težina:</strong> 7.26 kg (muški), 4 kg (žene)</p>
             <p>
@@ -70,7 +70,7 @@
             </p>
           </div>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-2">
             <h3>
               <i class="fas fa-compact-disc discipline-icon"></i> Bacanje diska
             </h3>
@@ -87,7 +87,7 @@
             </p>
           </div>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-3">
             <h3>
               <i class="fas fa-bullseye discipline-icon"></i> Bacanje koplja
             </h3>
@@ -104,7 +104,7 @@
             </p>
           </div>
 
-          <div class="discipline">
+          <div class="discipline scroll-animate-left delay-4">
             <h3>
               <i class="fas fa-hammer discipline-icon"></i> Bacanje kladiva
             </h3>
@@ -124,9 +124,9 @@
         </div>
 
         <div class="facts-sidebar">
-          <h2 class="facts-title">Zanimljivosti</h2>
+          <h2 class="facts-title scroll-animate">Zanimljivosti</h2>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-1">
             <strong>Antičko bacanje diska</strong>
             <p>
               Bacanje diska bilo je dio originalnog pentatlona na antičkim
@@ -135,7 +135,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-2">
             <strong>Kamenje umjesto kugle</strong>
             <p>
               Bacanje kugle potječe od natjecanja u bacanju teškog kamenja u
@@ -144,7 +144,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-3">
             <strong>Promjena dizajna koplja</strong>
             <p>
               1986. godine promijenjen je dizajn koplja kako bi se spriječilo
@@ -153,7 +153,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-4">
             <strong>Prvo žensko bacanje kladiva</strong>
             <p>
               Bacanje kladiva za žene uvedeno je na Svjetskom prvenstvu u
@@ -161,7 +161,7 @@
             </p>
           </div>
 
-          <div class="fact-item">
+          <div class="fact-item scroll-animate-scale delay-5">
             <strong>Najstariji rekord</strong>
             <p>
               Svjetski rekord u bacanju kugle za žene (22.63 m) drži Natalya
@@ -173,32 +173,32 @@
       </div>
 
       <div class="records">
-        <h2 class="section-title">
-          Neki od svjetskih rekordova u bacačkim disciplinama
+        <h2 class="section-title scroll-animate">
+          Neki od svjetskih rekorda u bacačkim disciplinama
         </h2>
         <div class="records-grid">
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-1">
             <h4>Bacanje kugle (muški)</h4>
             <p><strong>Daljina:</strong> 23.56 m</p>
             <p><strong>Vlasnik:</strong> Ryan Crouser</p>
             <p><strong>Datum:</strong> 27. svibnja 2023.</p>
           </div>
 
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-2">
             <h4>Bacanje kugle (žene)</h4>
             <p><strong>Daljina:</strong> 22.63 m</p>
             <p><strong>Vlasnica:</strong> Natalya Lisovskaya</p>
             <p><strong>Datum:</strong> 7. lipnja 1987.</p>
           </div>
 
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-3">
             <h4>Bacanje diska (muški)</h4>
             <p><strong>Daljina:</strong> 74.08 m</p>
             <p><strong>Vlasnik:</strong> Jürgen Schult</p>
             <p><strong>Datum:</strong> 6. lipnja 1986.</p>
           </div>
 
-          <div class="record-card">
+          <div class="record-card scroll-animate-scale delay-4">
             <h4>Bacanje koplja (muški)</h4>
             <p><strong>Daljina:</strong> 98.48 m</p>
             <p><strong>Vlasnik:</strong> Jan Železný</p>
@@ -210,7 +210,7 @@
 
     <footer>
       <div class="container">
-        <div class="footer-content">
+        <div class="footer-content scroll-animate">
           <div class="athletics-icon">
             <i class="fas fa-medal"></i>
           </div>
@@ -223,5 +223,45 @@
         </div>
       </div>
     </footer>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        // Observer za hero sekciju - jednosmerne animacije
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Ne uklanjaj klasu kada element izadje iz viewa
+                }
+            });
+        }, observerOptions);
+
+        // Observer za ostale elemente - dvosmerne animacije
+        const regularObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero elementi - jednosmerne animacije
+            const heroElements = document.querySelectorAll('.page-title, .page-subtitle');
+            heroElements.forEach(el => heroObserver.observe(el));
+            
+            // Ostali elementi - dvosmerne animacije
+            const regularElements = document.querySelectorAll('.back-button, .section-title, .discipline, .facts-title, .fact-item, .record-card, .footer-content');
+            regularElements.forEach(el => regularObserver.observe(el));
+        });
+    </script>
   </body>
 </html>

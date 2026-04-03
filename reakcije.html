@@ -38,8 +38,8 @@
 
     <main class="container">
         <section class="reaction-test">
-            <h2>Test reakcija</h2>
-            <div class="instructions">
+            <h2 class="scroll-animate">Test reakcija</h2>
+            <div class="instructions scroll-animate-left delay-1">
                 <p>Kliknite na "Započni test" da biste počeli. Nakon što se svjetlo upali zeleno, kliknite na njega što je brže moguće!</p>
             </div>
             <div class="test-area">
@@ -52,7 +52,7 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content scroll-animate">
                 <div class="athletics-icon">
                     <i class="fas fa-medal"></i>
                 </div>
@@ -65,5 +65,30 @@
     </footer>
 
     <script src="js/reakcije.js"></script>
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        // Observer za ostale elemente - dvosmerne animacije
+        const regularObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with scroll animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ostali elementi - dvosmerne animacije
+            const regularElements = document.querySelectorAll('.reaction-test h2, .instructions, .footer-content');
+            regularElements.forEach(el => regularObserver.observe(el));
+        });
+    </script>
 </body>
 </html>
