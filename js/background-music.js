@@ -1,4 +1,4 @@
-// Persistent background music system
+// Optimized persistent background music system
 (function() {
     // Globalni audio player koji preživljava navigaciju
     let globalAudio = window.globalBackgroundAudio;
@@ -9,6 +9,19 @@
         globalAudio.loop = true;
         globalAudio.volume = 0.2;
         globalAudio.preload = 'auto';
+        
+        // Dodaj event listenere za bolju kontrolu
+        globalAudio.addEventListener('canplaythrough', () => {
+            console.log('Muzika učitana i spremna');
+        });
+        
+        globalAudio.addEventListener('play', () => {
+            console.log('Muzika svira');
+        });
+        
+        globalAudio.addEventListener('pause', () => {
+            console.log('Muzika pauzirana');
+        });
         
         // Sačuvaj globalni referencu
         window.globalBackgroundAudio = globalAudio;
@@ -36,11 +49,21 @@
         window.audioInitialized = true;
     }
     
-    // Nastavi puštati ako je već sviralo
-    if (!globalAudio.paused && globalAudio.readyState >= 3) {
-        globalAudio.play().catch(error => {
-            console.log('Greška pri nastavku puštanja:', error);
-        });
+    // Brza provjera i nastavak puštanja
+    function quickResume() {
+        if (globalAudio.readyState >= 2 && globalAudio.paused) {
+            globalAudio.currentTime = parseFloat(sessionStorage.getItem('backgroundMusicTime') || '0');
+            globalAudio.play().catch(error => {
+                console.log('Greška pri brzom nastavku:', error);
+            });
+        }
+    }
+    
+    // Pokreni odmah ako je moguće
+    if (globalAudio.readyState >= 2) {
+        quickResume();
+    } else {
+        globalAudio.addEventListener('canplay', quickResume, { once: true });
     }
     
     // Globalne kontrole
@@ -72,28 +95,42 @@
         }
     };
     
-    // Očuvaj stanje prilikom navigacije
+    // Brzo čuvanje stanja prilikom navigacije
     window.addEventListener('beforeunload', () => {
-        // Sačuvaj trenutno vrijeme i stanje
         sessionStorage.setItem('backgroundMusicTime', globalAudio.currentTime);
         sessionStorage.setItem('backgroundMusicPlaying', !globalAudio.paused);
     });
     
-    // Vrati stanje nakon učitavanja
+    // Brzo vraćanje stanja nakon učitavanja
     window.addEventListener('load', () => {
         const savedTime = parseFloat(sessionStorage.getItem('backgroundMusicTime') || '0');
         const wasPlaying = sessionStorage.getItem('backgroundMusicPlaying') === 'true';
         
-        if (savedTime > 0) {
+        if (wasPlaying && savedTime > 0) {
             globalAudio.currentTime = savedTime;
-        }
-        
-        if (wasPlaying && !globalAudio.paused) {
-            globalAudio.play().catch(error => {
-                console.log('Greška pri vraćanju muzike:', error);
-            });
+            if (globalAudio.readyState >= 2) {
+                globalAudio.play().catch(error => {
+                    console.log('Greška pri vraćanju muzike:', error);
+                });
+            }
         }
     });
     
-    console.log('Background music sistem učitan');
+    // Manji delay za SPA navigaciju
+    let navigationTimer;
+    document.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' && e.target.href) {
+            navigationTimer = setTimeout(() => {
+                sessionStorage.setItem('backgroundMusicTime', globalAudio.currentTime);
+                sessionStorage.setItem('backgroundMusicPlaying', !globalAudio.paused);
+            }, 50);
+        }
+    });
+    
+    // Očisti timer ako navigacija ne uspije
+    window.addEventListener('pageshow', () => {
+        clearTimeout(navigationTimer);
+    });
+    
+    console.log('Optimized background music sistem učitan');
 })();
