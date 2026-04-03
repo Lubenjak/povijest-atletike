@@ -76,11 +76,46 @@
                     <h3><i class="fas fa-globe"></i> Kontakt</h3>
                     <p>Email: <a href="mailto:dlubenjak00@gmail.com">dlubenjak00@gmail.com</a></p>
                     <p>Mobitel: <a href="tel:+385923183605">092 318 3605</a></p>
+                    <button class="contact-button" onclick="openContactForm()">
+                        <i class="fas fa-envelope"></i> Postavi pitanje
+                    </button>
                 </div>
             </div>
         </section>
 
         <a href="index.html" class="back-button scroll-animate"><i class="fas fa-arrow-left"></i> Povratak na početnu</a>
+    </div>
+
+    <!-- Kontakt forma modal -->
+    <div id="contactModal" class="contact-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-envelope"></i> Postavite pitanje</h3>
+                <button class="close-button" onclick="closeContactForm()">&times;</button>
+            </div>
+            <form id="contactForm" onsubmit="sendFormspree(event)">
+                <div class="form-group">
+                    <label for="name">Vaše ime *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Vaš email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Predmet *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Poruka *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i> Pošalji pitanje
+                </button>
+            </form>
+            <div id="formMessage" class="form-message"></div>
+        </div>
     </div>
 
     <footer>
@@ -97,44 +132,7 @@
       </div>
     </footer>
 
-    <script>
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        // Observer za hero sekciju - jednosmerne animacije
-        const heroObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    // Ne uklanjaj klasu kada element izadje iz viewa
-                }
-            });
-        }, observerOptions);
-
-        // Observer za ostale elemente - dvosmerne animacije
-        const regularObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with scroll animation classes
-        document.addEventListener('DOMContentLoaded', () => {
-            // Hero elementi - jednosmerne animacije
-            const heroElements = document.querySelectorAll('.page-title, .page-subtitle');
-            heroElements.forEach(el => heroObserver.observe(el));
-            
-            // Ostali elementi - dvosmerne animacije
-            const regularElements = document.querySelectorAll('.section-title, .profile-card, .history-item, .back-button, .footer-content');
-            regularElements.forEach(el => regularObserver.observe(el));
-        });
-    </script>
+    <script src="js/animacija_o-meni.js"></script>
+    <script src="js/pitanja.js"></script>
 </body>
 </html>
