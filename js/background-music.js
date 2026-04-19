@@ -1,4 +1,4 @@
-// Background music system
+// Background music system - kontinuirano sviranje izmeðu stranica
 (function() {
     let globalAudio = window.globalBackgroundAudio;
     
@@ -9,15 +9,14 @@
         globalAudio.preload = 'auto';
         window.globalBackgroundAudio = globalAudio;
         
-        globalAudio.play().catch(error => {
-            console.log('Autoplay blokiran, cekam interakciju');
-        });
+        // NE POKRECI MUZIKU AUTOMATSKI - cekaj na korisnikov klik
+        console.log('Background music spreman, cekam na korisnikovu interakciju');
     }
     
     function startAudio() {
         if (globalAudio.paused) {
             globalAudio.play().catch(error => {
-                console.log('Gre\u0161ka pri pu\u0161tanju:', error);
+                console.log('Greka pri pustanju:', error);
             });
         }
     }
@@ -37,9 +36,12 @@
         isPlaying: () => !globalAudio.paused
     };
     
+    // NE ZAUSTAVLJAJ MUZIKU PRI PROMJENI STRANICE - samo spremi stanje
     window.addEventListener('beforeunload', () => {
         sessionStorage.setItem('backgroundMusicTime', globalAudio.currentTime);
         sessionStorage.setItem('backgroundMusicPlaying', !globalAudio.paused);
+        console.log('Spremljeno stanje muzike - svira:', !globalAudio.paused);
+        // NE ZAUSTAVLJAJ MUZIKU - ne pozivaj globalAudio.pause()
     });
     
     window.addEventListener('load', () => {
@@ -48,7 +50,18 @@
         
         if (wasPlaying && savedTime > 0) {
             globalAudio.currentTime = savedTime;
-            globalAudio.play().catch(error => console.log('Gre\u0161ka:', error));
+            console.log('Muzika bila svirala, nastavljam sa:', savedTime);
+            
+            // NASTAVI SVIRANJE AUTOMATSKI AKO JE BILO SVIRALO
+            globalAudio.play().catch(error => {
+                console.log('Autoplay blokiran, cekam na interakciju za nastavak');
+                // Ako je autoplay blokiran, cekaj na prvi klik
+                document.addEventListener('click', () => {
+                    if (wasPlaying && globalAudio.paused) {
+                        globalAudio.play().catch(e => console.log('Greka:', e));
+                    }
+                }, { once: true });
+            });
         }
     });
 })();

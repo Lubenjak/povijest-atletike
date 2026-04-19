@@ -1,0 +1,116 @@
+/* Audio gumb - kontrola muzike */
+.audio-control-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 25px;
+    padding: 8px 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.audio-control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+}
+
+.audio-control-btn:active {
+    transform: translateY(0);
+}
+
+.audio-control-btn.playing {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 2px 10px rgba(240, 147, 251, 0.3);
+}
+
+.audio-control-btn.playing:hover {
+    box-shadow: 0 4px 15px rgba(240, 147, 251, 0.5);
+}
+
+.audio-control-btn .fa {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.audio-control-btn:hover .fa {
+    transform: scale(1.1);
+}
+
+/* Stilovi za gumb u navigaciji */
+.main-nav .audio-control-btn,
+nav .audio-control-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    text-decoration: none;
+}
+
+.main-nav .audio-control-btn:hover,
+nav .audio-control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+}
+
+.main-nav .audio-control-btn.playing,
+nav .audio-control-btn.playing {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    box-shadow: 0 2px 8px rgba(240, 147, 251, 0.3);
+}
+
+.main-nav .audio-control-btn.playing:hover,
+nav .audio-control-btn.playing:hover {
+    box-shadow: 0 4px 12px rgba(240, 147, 251, 0.5);
+}
+
+/* Responsive dizajn */
+@media (max-width: 768px) {
+    .audio-control-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .audio-control-btn .fa {
+        font-size: 14px;
+    }
+    
+    .main-nav .audio-control-btn,
+    nav .audio-control-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .audio-control-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+    
+    .audio-control-btn .fa {
+        font-size: 12px;
+    }
+    
+    .main-nav .audio-control-btn,
+    nav .audio-control-btn {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+}

@@ -1,23 +1,45 @@
 <!DOCTYPE html>
+
 <html lang="hr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>O meni - Povijest atletike</title>
+
     <link rel="stylesheet" href="css/index.css">
+
     <link rel="stylesheet" href="css/o-meni.css">
+
+    <link rel="stylesheet" href="css/audio-gumb.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
+
 <body>
+
   </head>
+
   <body>
+
     <header>
+
       <div class="container">
+
         <div class="header-content">
+
           <a href="index.html" class="logo">
+
             <i class="fas fa-running logo-icon"></i>
+
             <h1>Povijest atletike</h1>
+
           </a>
+
           <nav>
             <a href="index.html"><i class="fas fa-home"></i> Početna</a>
             <a href="trkacke.html"><i class="fas fa-running"></i> Trkačke</a>
@@ -30,110 +52,219 @@
             <a href="kviz.html"><i class="fas fa-question-circle"></i> Kviz</a>
             <a href="reakcije.html"><i class="fas fa-stopwatch"></i> Test reakcija</a>
             <a href="o-meni.html" class="active"><i class="fas fa-user"></i> O meni</a>
+            <button id="audio-toggle" class="audio-control-btn">
+                <i class="fas fa-play"></i>
+                <span>Muzika</span>
+            </button>
           </nav>
+
         </div>
+
       </div>
+
     </header>
 
+
+
     <section class="page-hero">
+
       <div class="container">
+
         <h1 class="page-title scroll-animate-left delay-1">O meni</h1>
+
         <p class="page-subtitle scroll-animate-left delay-2">
+
           Dobrodošli na stranicu autora! Ovdje možete vidjeti puno zanimljivosti i osobnih stvari o meni!
+
         </p>
+
       </div>
+
     </section>
 
+
+
     <div class="container">
+
         <section class="profile-section">
+
             <h2 class="section-title scroll-animate">Profil i galerija</h2>
+
             <div class="profile-grid">
+
                 <div class="profile-card scroll-animate-scale delay-1">
+
                     <img src="slike/ja2.jpeg" alt="Profil slika 1" />
+
                     <h3>Dominik Lubenjak</h3>
+
                     <p>Moje ime je Dominik Lubenjak i bavim se atletikom u Atletskom klubu Agram već nekoliko godina i završavam Tehničku školu Ruđera Boškovića u Zagrebu.</p>
+
                 </div>
+
                 <div class="profile-card scroll-animate-scale delay-2">
+
                     <img src="slike/ja3.jpeg" alt="Profil slika 2" />
+
                     <h3>Strast za sport</h3>
+
                     <p>Od malih nogu sport je bio moja ljubav. Krenuo sam trenirati nogomet kada sam imao 7 godina u NK Rudeš-u, a onda sam prešao na atletiku krajem osmog razreda osnovne škole.</p>
+
                 </div>
+
             </div>
+
         </section>
+
+
 
         <section class="history">
+
             <h2 class="section-title scroll-animate">O projektu</h2>
+
             <div class="history-content">
+
                 <div class="history-item scroll-animate-left delay-1">
+
                     <h3><i class="fas fa-user"></i> Autor</h3>
+
                     <p>U ovih nekoliko godina koliko se bavim atletikom, postao sam višestruki prvak u disciplinama poput skoka u vis, troskoka, 110m s preponama i višeboj(10 disciplina u 2 dana).</p>
+
                 </div>
+
                 <div class="history-item scroll-animate-left delay-2">
+
                     <h3><i class="fas fa-lightbulb"></i> Motivacija</h3>
+
                     <p>Odlučio sam napraviti ovu stranicu kako bi drugi ljudi otkrili ljepotu ovog sporta i možda se okušali u njemu.</p>
+
                 </div>
+
                 <div class="history-item scroll-animate-left delay-3">
+
                     <h3><i class="fas fa-globe"></i> Kontakt</h3>
+
                     <p>Email: <a href="mailto:dlubenjak00@gmail.com">dlubenjak00@gmail.com</a></p>
+
                     <p>Mobitel: <a href="tel:+385923183605">092 318 3605</a></p>
+
                     <button class="contact-button" onclick="openContactForm()">
+
                         <i class="fas fa-envelope"></i> Postavi pitanje
+
                     </button>
+
                 </div>
+
             </div>
+
         </section>
 
+
+
         <a href="index.html" class="back-button scroll-animate"><i class="fas fa-arrow-left"></i> Povratak na početnu</a>
+
     </div>
+
+
 
     <!-- Kontakt forma modal -->
+
     <div id="contactModal" class="contact-modal">
+
         <div class="modal-content">
+
             <div class="modal-header">
+
                 <h3><i class="fas fa-envelope"></i> Postavite pitanje</h3>
+
                 <button class="close-button" onclick="closeContactForm()">&times;</button>
+
             </div>
+
             <form id="contactForm" onsubmit="sendFormspree(event)">
+
                 <div class="form-group">
+
                     <label for="name">Vaše ime *</label>
+
                     <input type="text" id="name" name="name" required>
+
                 </div>
+
                 <div class="form-group">
+
                     <label for="email">Vaš email *</label>
+
                     <input type="email" id="email" name="email" required>
+
                 </div>
+
                 <div class="form-group">
+
                     <label for="subject">Predmet *</label>
+
                     <input type="text" id="subject" name="subject" required>
+
                 </div>
+
                 <div class="form-group">
+
                     <label for="message">Poruka *</label>
+
                     <textarea id="message" name="message" rows="5" required></textarea>
+
                 </div>
+
                 <button type="submit" class="submit-button">
+
                     <i class="fas fa-paper-plane"></i> Pošalji pitanje
+
                 </button>
+
             </form>
+
             <div id="formMessage" class="form-message"></div>
+
         </div>
+
     </div>
 
+
+
     <footer>
+
       <div class="container">
+
         <div class="footer-content scroll-animate">
+
           <div class="athletics-icon">
+
             <i class="fas fa-medal"></i>
+
           </div>
+
           <h3>O meni - Povijest atletike</h3>
+
           <p class="footer-text">
+
             Ova stranica predstavlja dodatak edukativnom web projektu i služi za bolje upoznavanje autora i ako je potrebno upitati ga neko pitanje putem kontakta.
+
           </p>
+
         </div>
+
       </div>
+
     </footer>
 
+
+
     <script src="js/background-music.js"></script>
+    <script src="js/audio-gumb.js"></script>
     <script src="js/animacija_o-meni.js"></script>
     <script src="js/pitanja.js"></script>
+
 </body>
+
 </html>

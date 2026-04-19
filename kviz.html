@@ -1,23 +1,40 @@
 <!doctype html>
+
 <html lang="hr">
+
   <head>
+
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Kviz znanja o atletici - Edukativna stranica</title>
+
     <link rel="stylesheet" href="css/kviz.css" />
+    <link rel="stylesheet" href="css/audio-gumb.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+
   </head>
+
   <body>
+
     <header>
+
       <div class="container">
+
         <div class="header-content">
+
           <a href="index.html" class="logo">
+
             <i class="fas fa-running logo-icon"></i>
+
             <h1>Povijest atletike</h1>
+
           </a>
+
           <nav>
             <a href="index.html"><i class="fas fa-home"></i> Početna</a>
             <a href="trkacke.html"><i class="fas fa-running"></i> Trkačke</a>
@@ -30,71 +47,142 @@
             <a href="kviz.html" class="active"><i class="fas fa-question-circle"></i> Kviz</a>
             <a href="reakcije.html"><i class="fas fa-stopwatch"></i> Test reakcija</a>
             <a href="o-meni.html"><i class="fas fa-user"></i> O meni</a>
+            <button id="audio-toggle" class="audio-control-btn">
+                <i class="fas fa-play"></i>
+                <span>Muzika</span>
+            </button>
           </nav>
+
         </div>
+
       </div>
+
     </header>
 
+
+
     <section class="page-hero">
+
       <div class="container">
+
         <h1 class="page-title scroll-animate-left delay-1">Kviz znanja o atletici</h1>
+
         <p class="page-subtitle scroll-animate-left delay-2">
+
           Testirajte svoje znanje o atletici, rekordima i slavnim sportašima
+
           kroz zabavni interaktivni kviz s 15 pitanja.
+
         </p>
+
       </div>
+
     </section>
 
+
+
     <div class="container">
+
       <a href="index.html" class="back-button scroll-animate">
+
         <i class="fas fa-arrow-left"></i> Povratak na početnu
+
       </a>
+
       <section class="quiz-section">
+
         <h2 class="quiz-title scroll-animate">
+
           <i class="fas fa-brain"></i> Testirajte svoje znanje!
+
         </h2>
+
         <div class="quiz-container">
+
           <div class="progress-bar">
+
             <div class="progress-fill" id="progressFill"></div>
+
           </div>
+
+
 
           <div id="quizContent">
+
             <div class="quiz-question" id="questionContainer">
+
               <div class="question-text" id="questionText">
+
                 Učitavanje pitanja...
+
               </div>
+
               <div class="quiz-options" id="optionsContainer"></div>
+
             </div>
+
           </div>
+
+
 
           <div class="quiz-result" id="quizResult"></div>
+
           <button class="quiz-button" id="nextButton" style="display: none">
+
             Sljedeće pitanje
+
           </button>
+
           <button class="quiz-button" id="restartButton" style="display: none">
+
             Pokreni kviz ponovo
+
           </button>
+
         </div>
+
       </section>
+
     </div>
 
+
+
     <footer>
+
       <div class="container">
+
         <div class="footer-content scroll-animate">
+
           <div class="athletics-icon">
+
             <i class="fas fa-medal"></i>
+
           </div>
+
           <h3>Kviz znanja o atletici</h3>
+
           <p class="footer-text">
+
             Atletika je sport koji kombinira brzinu, snagu, izdržljivost i
+
             tehniku. Kroz ovaj kviz testirajte koliko poznajete povijest,
+
             discipline i rekordere ovog najstarijeg olimpijskog sporta.
+
           </p>
+
         </div>
+
       </div>
+
     </footer>
+
     <script src="js/background-music.js"></script>
+    <script src="js/audio-gumb.js"></script>
     <script src="js/kviz.js"></script>
     <script src="js/animacija_kviz.js"></script>
+
   </body>
+
 </html>
+
